@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
-$mongoHost = isset($_ENV['mongo-host']) ? $_ENV['mongo-host'] : 'localhost';
+$mongoHost = isset($_ENV['MONGO_HOST']) ? $_ENV['MONGO_HOST'] : 'localhost';
 $client = new MongoDB\Client("mongodb://{$mongoHost}:27017");
 $guestbook = $client->guestbook->entries;
 
